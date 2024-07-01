@@ -28,7 +28,8 @@ This project sets up a basic web server in Node.js with an API endpoint that res
     ```
 
 3.  Create a .env file in the root directory and add your configuration variables:
-    ```plaintext
+
+    ````plaintext
     PORT=3005
 
         API_KEY=YOUR_OPENWEATHERMAP_API_KEY
@@ -37,6 +38,8 @@ This project sets up a basic web server in Node.js with an API endpoint that res
         ```
 
     Sign up at [OpenWeatherMap](https://openweathermap.org), Go to your API keys and generate a new key.
+
+    ````
 
 4.  For Local testing: uncomment this code on line 24 to line 26 in index.js
 
