@@ -41,7 +41,7 @@ This project sets up a basic web server in Node.js with an API endpoint that res
 
     ````
 
-4.  For Local testing: uncomment this code on line 24 to line 26 in index.js
+4.  For Local testing: uncomment this code on line 26 to line 28 in index.js
 
 ```javascript
 //  if (clientIp === '127.0.0.1' || clientIp === '::1' || clientIp === '::ffff:127.0.0.1') {
