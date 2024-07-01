@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitor Form</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enter your name</h1>
+      <form action="/api/hello" method="get">
+        <label for="visitor_name">Name:</label>
+        <input type="text" id="visitor_name" name="visitor_name" required />
+        <button type="submit"id="submitButton">Submit</button>
+      </form>
+      <div class="result" id="result"></div>
+    </div>
+
+
+    <!-- <script>
+      document.getElementById('submitButton').addEventListener('click', async () => {
+          const visitorName = document.getElementById('visitor_name').value;
+          if (visitorName) {
+              try {
+                  const response = await fetch(`/api/hello?visitor_name=${visitorName}`);
+                  const data = await response.json();
+                  document.getElementById('result').textContent = data.greeting;
+              } catch (error) {
+                  document.getElementById('result').textContent = 'An error occurred. Please try again.';
+              }
+          } else {
+              document.getElementById('result').textContent = 'Please enter your name.';
+          }
+      });
+  </script> -->
+  </body>
+</html>

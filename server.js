@@ -8,12 +8,14 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Your OpenWeatherMap API key
-const key = process.env.API_KEY || '3e54a634a3f0230b0597bc6dc5a77d49';
+const key = process.env.API_KEY;
 
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve the HTML form
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/api/hello', async (req, res) => {
@@ -59,6 +61,14 @@ app.get('/api/hello', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+//catch all route
+app.all("*", (req, res) => {
+    res.status(404);
+    res.json({
+      message: "Not found",
+    });
+  });
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
