@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/hello", async (req, res) => {
   let visitorName = req.query.visitor_name || "Guest";
-  let clientIp = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  let clientIp = (req.headers["x-forwarded-for"] || req.socket.remoteAddress ||'') .split(',')[0].trim();
 
   // For local testing, override the IP address with a known public IP address, handle this case for both the IPv4 and IPv6 loopback addresses
   //  if (clientIp === '127.0.0.1' || clientIp === '::1' || clientIp === '::ffff:127.0.0.1') {
@@ -32,7 +32,7 @@ app.get("/api/hello", async (req, res) => {
     const geoResponse = await axios.get(`http://ip-api.com/json/${clientIp}`);
     const geoData = geoResponse.data;
     console.log(`geoData: ${geoData}`);
-    
+
     if (!geoData || geoData.status !== "success") {
       throw new Error("Failed to fetch geo-location data");
     }
