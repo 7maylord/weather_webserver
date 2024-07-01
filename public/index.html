@@ -14,24 +14,6 @@
         <input type="text" id="visitor_name" name="visitor_name" required />
         <button type="submit" id="submitButton">Submit</button>
       </form>
-      <div class="result" id="result"></div>
     </div>
-
-    <!-- <script>
-      document.getElementById('submitButton').addEventListener('click', async () => {
-          const visitorName = document.getElementById('visitor_name').value;
-          if (visitorName) {
-              try {
-                  const response = await fetch(`/api/hello?visitor_name=${visitorName}`);
-                  const data = await response.json();
-                  document.getElementById('result').textContent = data.greeting;
-              } catch (error) {
-                  document.getElementById('result').textContent = 'An error occurred. Please try again.';
-              }
-          } else {
-              document.getElementById('result').textContent = 'Please enter your name.';
-          }
-      });
-  </script> -->
   </body>
 </html>

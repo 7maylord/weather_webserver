@@ -58,12 +58,6 @@ button:hover {
   background-color: #218838;
 }
 
-.result {
-  text-align: center;
-  font-size: 18px;
-  color: #333;
-  margin-top: 20px;
-}
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -87,9 +81,6 @@ button:hover {
   button {
     font-size: 14px;
   }
-  .result {
-    font-size: 14px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -106,10 +97,6 @@ button:hover {
   }
 
   button {
-    font-size: 12px;
-  }
-
-  .result {
     font-size: 12px;
   }
 }

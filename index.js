@@ -31,7 +31,7 @@ app.get("/api/hello", async (req, res) => {
     // Fetch geo-location information based on the client's IP address
     const geoResponse = await axios.get(`http://ip-api.com/json/${clientIp}`);
     const geoData = geoResponse.data;
-    console.log(`geoData: ${geoData}`);
+    console.log('geoData:', geoData);
 
     if (!geoData || geoData.status !== "success") {
       throw new Error("Failed to fetch geo-location data");
