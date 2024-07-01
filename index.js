@@ -26,12 +26,13 @@ app.get("/api/hello", async (req, res) => {
   //  if (clientIp === '127.0.0.1' || clientIp === '::1' || clientIp === '::ffff:127.0.0.1') {
   //     clientIp = '102.89.22.160'; // Example IP address, can be replaced with any public IP address for testing
   // }
-
+  console.log(`client IP: ${clientIp}`);
   try {
     // Fetch geo-location information based on the client's IP address
     const geoResponse = await axios.get(`http://ip-api.com/json/${clientIp}`);
     const geoData = geoResponse.data;
-
+    console.log(`geoData: ${geoData}`);
+    
     if (!geoData || geoData.status !== "success") {
       throw new Error("Failed to fetch geo-location data");
     }
